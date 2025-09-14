@@ -3,4 +3,4 @@ let ancho: number = 20;
 
 let areaRectangulo: number = alto * ancho;
 
-console.log(areaRectangulo);
+console.log(areaRectangulo)

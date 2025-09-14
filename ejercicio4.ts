@@ -24,8 +24,10 @@ if (numero2 % 10 == 0) {
     console.log("no es divisible");
 }
 
-if (numero2 < 0 || numero2 > 100) {
-    console.log("es mayor o menor que 100");
+if (numero2 < 100) {
+    console.log("es menor que 100");
+} else if (numero2 > 100){
+    console.log("es mayor que 100");
 }
 
 
