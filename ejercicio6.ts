@@ -1,9 +1,3 @@
-let numero: number = 0;
-
-while (numero <= 100) {
-    if(numero % 2 == 0) {
-        console.log(numero)
-    }
-    
-    numero++
+for (let numero = 2; numero <= 100 ; numero += 2) {
+    console.log(numero)
 }
