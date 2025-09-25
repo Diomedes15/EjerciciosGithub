@@ -11,7 +11,7 @@ function compararTextos (texto1: string, texto2: string, coincidencia: string): 
 
     for (let i = 0; i < texto1.length; i++) {
 
-        if (texto1.charAt(i) === coincidencia) {
+        if (textoMinus1.charAt(i) === letraMinus) {
             contador1++
         }
     }
@@ -20,7 +20,7 @@ function compararTextos (texto1: string, texto2: string, coincidencia: string): 
 
     for (let i = 0; i < texto2.length; i++) {
 
-        if (texto2.charAt(i) === coincidencia) {
+        if (textoMinus2.charAt(i) === letraMinus) {
             contador2++
         }
     }

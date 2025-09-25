@@ -9,7 +9,7 @@ function contarLetra (texto: string, coincidencia: string): number {
 
     for (let i = 0; i < texto.length; i++) {
 
-        if (texto.charAt(i) === coincidencia) {
+        if (palabraMinus.charAt(i) === letraMinus) {
             contador++
         }
     }
