@@ -29,7 +29,7 @@ function comprobarGanador (tablero: string[], jugador: string): boolean{
         let c: number = combinacion[2];
 
         if (tablero[a] === jugador && tablero[b] === jugador && tablero[c] === jugador) {
-            return juegoTerminado=true;
+            return true;
         }
     }
 
@@ -39,27 +39,30 @@ function comprobarGanador (tablero: string[], jugador: string): boolean{
 while (!juegoTerminado){
 
 const numeroElegido: number = parseInt(prompt("Elige donde quieres poner tu ficha") || "");
-const numeros: string = "012345678";
+const numeros: string = "123456789";
 
 function cambiarArray (numero: number){
 
-    if(numeros.includes(tablero[numero])){
+    if(numeros.includes(tablero[numero - 1])){
 
         tablero.splice(numero - 1,1,jugador)
 
-        comprobarGanador(tablero, jugador);
+        if (comprobarGanador(tablero,jugador)){
+            juegoTerminado = true;
+        } else {
 
-        alert (`
-            ${tablero[0]} | ${tablero[1]} | ${tablero[2]}
-            ${tablero[3]} | ${tablero[4]} | ${tablero[5]}
-            ${tablero[6]} | ${tablero[7]} | ${tablero[8]}
+            if(jugador === "X") jugador="O"
+            else if (jugador === "O") jugador="X"
 
-            Turno del jugador: ${jugador}`
-        );
+            alert (`
+                ${tablero[0]} | ${tablero[1]} | ${tablero[2]}
+                ${tablero[3]} | ${tablero[4]} | ${tablero[5]}
+                ${tablero[6]} | ${tablero[7]} | ${tablero[8]}
 
-        if(jugador === "X") jugador="O"
-        else if (jugador === "O") jugador="X"
-
+                Turno del jugador: ${jugador}`
+            );
+        }
+        
     } else {
         alert(`Número incorrecto, elige otro`)
     }
