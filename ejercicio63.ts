@@ -1,31 +1,26 @@
 const jojos = [
 	{
 		"nombre" : "Joseph Joestar",
-        "stand": "Hermit Purple",
-        "equipo" : "jojo",
+        "altura": 200
 	},
 	{
 		"nombre" : "Jotaro Kujo",
-        "stand": "Star Platinum",
-        "equipo" : "jojo",
+        "altura": 195
 	},
 	{
 		"nombre" : "Dio",
-        "stand": "The World",
-        "equipo" : "dio",
+        "altura": 195
 	},
 	{
 		"nombre" : "Vanilla Ice",
-        "stand": "Cream",
-        "equipo" : "dio",
+        "altura": 190
 	},
 	{
-		"nombre" : "Noriaki Kakyoin",
-        "stand": "Hierophant Green",
-        "equipo" : "jojo",
+		"nombre": "Noriaki Kakyoin",
+        "altura": 178
 	},
 ];
 
-const equipo : string[] = jojos.filter(j => j.equipo === "jojo").map(p => p.nombre);
+const media : number = jojos.reduce((acumulador, personaje) => acumulador + personaje.altura, 0) / jojos.length;
 
-console.log(equipo);
+console.log(media);
