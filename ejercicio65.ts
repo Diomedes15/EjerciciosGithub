@@ -6,11 +6,11 @@ boton1.addEventListener("click", () => {
         let cantidad = Number((document.getElementById("entrada") as HTMLInputElement).value);
         
         if (unidad.textContent === "°C"){
-            cantidad = cantidad * (5/9) + 23;
-            (document.getElementById("salida") as HTMLInputElement).value = cantidad.toFixed(2);
+            cantidad = (cantidad * (9/5)) + 32;
+            (document.getElementById("salida") as HTMLInputElement).value = cantidad.toFixed(1);
         } else {
-            cantidad = cantidad - 23 / (5/9);
-            (document.getElementById("salida") as HTMLInputElement).value = cantidad.toFixed(2);
+            cantidad = (cantidad - 32) * (5/9);
+            (document.getElementById("salida") as HTMLInputElement).value = cantidad.toFixed(1);
         }
     }
 );
