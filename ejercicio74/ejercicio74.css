@@ -1,0 +1,10 @@
+div {
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: white;
+
+  display: none; /* a flex después */
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+}
