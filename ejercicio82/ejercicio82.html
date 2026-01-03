@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, papel, tijera</title>
+    <style>
+        .contenedor {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100vw;
+            height: 80vh;
+            position: relative;
+        }
+
+        #jugador1,
+        #jugador2 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 100px;
+        }
+
+        .linea {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: black;
+        }
+
+        #interrogacion1 {
+            position: absolute;
+            left: 30%;
+            top: 55%;
+            transform: translateY(-50%);
+        }
+
+        #interrogacion2 {
+            position: absolute;
+            left: 58%;
+            top: 55%;
+            transform: translateY(-50%);
+        }
+
+        h1, p {
+            text-align: center;
+        }
+
+        img { 
+            width: 200px; 
+            height: 200px; 
+            cursor: pointer; 
+        }
+
+        .oculto {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="resultado"></h1>
+    <p id="elecciones"></p>
+    <div id="todo" class="contenedor">
+        <div id="jugador1">
+            <p id="texto1">Esperando al jugador 1</p>
+            <img id="piedra" class="opcion1" src="piedra.png">
+            <img id="papel" class="opcion1" src="papel.png">
+            <img id="tijera" class="opcion1" src="tijera.png">
+        </div>
+
+        <img id="interrogacion1" src="interrogante.png">
+
+        <div class="linea"></div>
+
+        <img id="interrogacion2" src="interrogante.png">
+
+        <div id="jugador2">
+            <p id="texto2">Esperando al jugador 2</p>
+            <img id="piedra" class="opcion2" src="piedra.png">
+            <img id="papel" class="opcion2" src="papel.png">
+            <img id="tijera" class="opcion2" src="tijera.png">
+        </div>
+    </div>
+    <script src="ejercicio82.js"></script>
+</body>
+</html>
