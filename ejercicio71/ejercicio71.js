@@ -1,18 +1,15 @@
-var anadir = document.getElementById("añadir");
-var entrada = document.getElementById("entrada");
-var contenedor = document.getElementById("contenedor");
-anadir.addEventListener("click", function () {
+const anadir = document.getElementById("añadir");
+let entrada = document.getElementById("entrada");
+const contenedor = document.getElementById("contenedor");
+anadir.addEventListener("click", () => {
     if (entrada.value) {
-        var parrafo = document.createElement("p");
+        const parrafo = document.createElement("p");
         parrafo.textContent = entrada.value;
         parrafo.classList.add("escuchar");
+        parrafo.addEventListener("click", () => {
+            parrafo.remove();
+        });
         contenedor.appendChild(parrafo);
         entrada.value = "";
     }
-});
-var parrafos = document.querySelectorAll(".escuchar");
-parrafos.forEach(function (p) {
-    p.addEventListener("click", function () {
-        p.remove();
-    });
 });

@@ -8,15 +8,11 @@ anadir.addEventListener("click", () => {
         parrafo.textContent = entrada.value;
         parrafo.classList.add("escuchar");
 
+        parrafo.addEventListener("click", () => {
+            parrafo.remove();
+        });
+
         contenedor.appendChild(parrafo);
         entrada.value = "";
     }
-})
-
-const parrafos = document.querySelectorAll(".escuchar");
-
-parrafos.forEach(p => {
-    p.addEventListener("click", () => {
-        p.remove();
-    })
 })
