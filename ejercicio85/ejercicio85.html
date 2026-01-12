@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en raya para dos</title>
+    <style>
+        #centrar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* centra vertical */
+            align-items: center;     /* centra horizontal */
+            height: 100vh;
+        }
+
+        #tablero {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .celda {
+            width: 150px;
+            height: 150px;
+            background-color: #4A7AFF;
+            border: 0px;
+            border-radius: 5px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .esconder {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="centrar">
+        <h1 id="turno">Es el turno de: O</h1>
+        <div id="tablero">
+            <button id="1" class="celda"></button>
+            <button id="2" class="celda"></button>
+            <button id="3" class="celda"></button>
+
+            <button id="4" class="celda"></button>
+            <button id="5" class="celda"></button>
+            <button id="6" class="celda"></button>
+
+            <button id="7" class="celda"></button>
+            <button id="8" class="celda"></button>
+            <button id="9" class="celda"></button>
+        </div>
+    </div>
+
+    <script src="ejercicio85.js"></script>
+</body>
+</html>
