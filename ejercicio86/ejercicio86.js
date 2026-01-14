@@ -6,6 +6,12 @@ let turnoMaquina = false;
 if (numeroAleatorio === 1) {
     turnoMaquina = true;
     turnoTexto.textContent = "Empieza la máquina";
+    setTimeout(() => {
+        jugarMaquina();
+    }, 700);
+}
+else {
+    turnoTexto.textContent = "Empieza el jugador";
 }
 function comprobarTablero() {
     const estado = Array.from(celdas).map(celda => {
@@ -17,6 +23,7 @@ function comprobarTablero() {
         if (img.src.includes("cero"))
             return "O";
     });
+    const todasOcupadas = estado.every(c => c !== null);
     const combinaciones = [
         [0, 1, 2], // fila 1
         [3, 4, 5], // fila 2
@@ -36,20 +43,29 @@ function comprobarTablero() {
             celdas.forEach(celda => {
                 celda.disabled = true;
             });
+            return true;
         }
         else if (estado[a] === "O" && estado[b] === "O" && estado[c] === "O") {
             turnoTexto.textContent = "¡Ha ganado la máquina!";
             celdas.forEach(celda => {
                 celda.disabled = true;
             });
+            return true;
+        }
+        else if (todasOcupadas) {
+            turnoTexto.textContent = "ha habido un empate.";
+            return true;
         }
     }
+    return false;
 }
 function celdasLibres() {
     return Array.from(celdas).filter(celda => celda.children.length === 0);
 }
 function jugarMaquina() {
     const libres = celdasLibres();
+    if (libres.length === 0)
+        return;
     const celdaElegida = libres[Math.floor(Math.random() * libres.length)];
     const crearImagenM = document.createElement("img");
     crearImagenM.src = "cero.png";
@@ -66,11 +82,11 @@ celdas.forEach(celda => {
         turnoTexto.textContent = "Es el turno de la máquina";
         turnoMaquina = true;
         comprobarTablero();
-        if (!turnoTexto.textContent.includes("ganado")) {
-            setTimeout(() => {
-                jugarMaquina();
-            }, 700);
+        if (comprobarTablero())
+            return;
+        setTimeout(() => {
+            jugarMaquina();
             comprobarTablero();
-        }
+        }, 700);
     });
 });
