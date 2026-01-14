@@ -56,7 +56,7 @@ async function ahorcado() {
         }
 
         document.addEventListener("keydown", (event: KeyboardEvent) => {
-            if (contadorVidas > 6){
+            if (contadorVidas >= 6){
                 pantalla.textContent = `Has perdido. Era ${nombrePokemon}`;
                 return;
             }
