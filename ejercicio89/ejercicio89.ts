@@ -38,8 +38,6 @@ function resultados () {
 
   texto1.textContent = `Has obtenido el ${porcentaje}% de acierto y has terminado la prueba en ${segundos} segundos`;
   pantalla.appendChild(texto1);
-
-
 }
 
 const textoCompleto: string = palabrasElegidas.join(" ")
