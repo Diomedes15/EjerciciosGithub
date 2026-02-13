@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tier List</title>
+    <style>
+        body {
+            background: #ededed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tierlist {
+            border-collapse: collapse;
+            width: 90vw;
+        }
+
+        .tierlist tr {
+            height: 90px;
+        }
+
+        .tierlist td {
+            border: 3px solid #000;
+        }
+
+        td.name {
+            width: 120px;
+            font-size: 40px;
+            color: black;
+            text-align: center;
+        }
+
+        td.images {
+            background: gray;
+            padding: 5px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin: 3px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        tr.s td.name { background: #ff4c4c; }
+        tr.a td.name { background: #ff8c42; }
+        tr.b td.name { background: #ffbf00; }
+        tr.c td.name { background: #ffe066; }
+        tr.d td.name { background: #9be564; }
+        tr.e td.name { background: #4caf50; }
+        tr.f td.name { background: #00c2c7; }
+    </style>
+</head>
+
+<body>
+    <div id="centrar">
+        <table class="tierlist">
+            <tr class="s">
+                <td class="name">S</td>
+                <td class="images"></td>
+            </tr>
+            <tr class="a">
+                <td class="name">A</td>
+                <td class="images"></td>
+            </tr>
+             <tr class="b">
+                <td class="name">B</td>
+                <td class="images"></td>
+            </tr>
+            <tr class="c">
+                <td class="name">C</td>
+                <td class="images"></td>
+            </tr>
+            <tr class="d">
+                <td class="name">D</td>
+                <td class="images"></td>
+            </tr>
+            <tr class="e">
+                <td class="name">E</td>
+                <td class="images"></td>
+            </tr>
+            <tr class="f">
+                <td class="name">F</td>
+                <td class="images"></td>
+            </tr>                                 
+        </table>
+        <div class="contenedorImagenes">
+            <img src="imagenes/CancionDeHieloyFuego.png" draggable="true">
+            <img src="imagenes/CronicaDelAseisinoDeReyes.png" draggable="true">
+            <img src="imagenes/ElArchivoDeLasTormentas.png" draggable="true">
+            <img src="imagenes/GeraltDeRivia.png" draggable="true">
+            <img src="imagenes/HermanosDeSangre.png" draggable="true">
+            <img src="imagenes/LaRuedaDelTiempo.png" draggable="true">
+            <img src="imagenes/LasCronicasDeNarnia.png" draggable="true">
+            <img src="imagenes/Malaz.png" draggable="true">
+            <img src="imagenes/MundoDisco.png" draggable="true">
+            <img src="imagenes/PrimeraLey.png" draggable="true">
+            <img src="imagenes/SenorDeLosAnillos.png" draggable="true">
+            <img src="imagenes/Vatidico.png" draggable="true">
+        </div>
+    </div>
+
+    <script src="ejercicio90.js"></script>
+</body>
+</html>
