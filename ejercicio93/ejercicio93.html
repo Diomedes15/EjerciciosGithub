@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon says</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #272727
+        }
+
+        #centrar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: 'Bitcount Grid Double', sans-serif;
+        }
+
+        #tablero {
+            display: grid;
+            grid-template-columns: repeat(2, 250px);
+            gap: 10px;
+        }
+
+        .boton {
+            width: 250px;
+            height: 250px;
+            perspective: 1000px;
+            border: none;
+            border-radius: 8px;
+            background: none;
+            cursor: pointer;
+            position: relative;
+            transition: filter 0.2s ease;
+        }
+
+        div#boton-0 {background: #307d33;}
+        div#boton-1 {background: #c92b2b;}
+        div#boton-2 {background: #d6b73c;}
+        div#boton-3 {background: #018fbf;}
+
+        .activo {
+            filter: brightness(1.6);
+        }
+
+        .circulo {
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+
+            background: #a8a8a8;
+            border: 10px solid #272727;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 40px;
+            font-weight: bold;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+        }
+
+        .bloqueado {
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="centrar">
+        <h1 id="texto">Simon says</h1>
+        <div id="tablero">
+            <div id="boton-0" class="boton"></div>
+            <div id="boton-1" class="boton"></div>
+            <div id="boton-2" class="boton"></div>
+            <div id="boton-3" class="boton"></div>
+        </div>
+        <div id="circulo" class="circulo"></div>
+    </div>
+
+    <script src="ejercicio93.js"></script>
+</body>
+</html>
