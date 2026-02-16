@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <style>
+        body{
+            background-color:#272727;
+        }
+
+        #centrar {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #herramientas {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        #lienzo {
+            flex: 1;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: block;
+        }
+
+        .boton {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 15px;
+            background-color: #a9d7ff;
+            cursor: pointer;
+            perspective: 1000px;
+        }
+
+        .boton img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="centrar">
+        <div id="herramientas">
+            <div id="lapiz" class="boton"><img src="Imagenes/lapiz.png"></div>
+            <div id="borrador" class="boton"><img src="Imagenes/borrador.png"></div>
+            <div id="pinturaRoja" class="boton"><img src="Imagenes/boterojo.png"></div>
+            <div id="pinturaAmarilla" class="boton"><img src="Imagenes/boteamarillo.png"></div>
+            <div id="pinturaVerde" class="boton"><img src="Imagenes/boteverde.png"></div>
+            <div id="pinturaAzul" class="boton"><img src="Imagenes/boteazul.png"></div>
+        </div>
+        <div id="lienzo">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+
+    <script src="ejercicio92.js"></script>
+</body>
+</html>
