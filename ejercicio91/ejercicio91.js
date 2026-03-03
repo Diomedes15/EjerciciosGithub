@@ -130,11 +130,12 @@ function comprobarLineas() {
     }
     if (lineas > 0) {
         puntos += 100 * (lineas * lineas);
-        document.getElementById("puntuación").textContent = puntos + " puntos";
+        const puntuacion = document.getElementById("puntuación");
+        puntuacion.textContent = puntos + " puntos";
     }
 }
 // 5. PERDER
-function gameOver() {
+function perder() {
     for (let columna = 0; columna < 10; columna++) {
         if (celdas[columna].classList.contains("ocupado")) {
             return true;
@@ -173,12 +174,12 @@ function puedeRotar(nuevaRot) {
     }
     return true;
 }
-function puedeMover(dx) {
+function puedeMover(desplazamiento) {
     const forma = piezaActual[rotacion];
     for (let fila = 0; fila < forma.length; fila++) {
         for (let columna = 0; columna < forma[fila].length; columna++) {
             if (forma[fila][columna] === 1) {
-                const x = posicionHorizontal + columna + dx;
+                const x = posicionHorizontal + columna + desplazamiento;
                 const y = posicionVertical + fila;
                 if (x < 0 || x >= 10)
                     return false;
@@ -201,7 +202,7 @@ function bajar() {
     else {
         fijarPieza();
         comprobarLineas();
-        if (gameOver()) {
+        if (perder()) {
             mostrarGameOver();
             return;
         }
