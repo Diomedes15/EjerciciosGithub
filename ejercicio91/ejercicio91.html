@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <style>
+        body{
+            background-color:#ffffff;
+        }
+
+        #centrar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 98vh;
+        }
+
+        #tablero {
+            width: 300px;
+            height: 600px;
+            display: grid;
+            grid-template-columns: repeat(10, 30px);
+            grid-template-rows: repeat(20, 30px);
+            background: #ffa5a5;
+        }
+
+        .hueco {
+        border: 1px solid #ff0000;
+        }
+
+        .activo {
+        background: blue;
+        }
+
+        .ocupado {
+        background: black;
+        }
+
+        #gameover {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 30px;
+        border: 3px solid red;
+        text-align: center;
+        font-size: 22px;
+        z-index: 10;
+        }
+
+        #gameover.oculto {
+        display: none;
+        }
+
+        #reiniciar {
+        margin-top: 15px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="centrar">
+        <div id="texto"><h2>Tetris</h2><p id="puntuación">0 puntos</p></div>
+        <div id="tablero"></div>
+        <div id="gameover" class="oculto">
+            <h2>GAME OVER</h2>
+            <button id="reiniciar">Jugar de nuevo</button>
+        </div>
+    </div>
+
+    <script src="ejercicio91.js"></script>
+</body>
+</html>
